@@ -32,12 +32,16 @@ img {
 
 
 @media (max-width: 700px) {
+    body {
+        font-size: 14px; /* Reduce text size */
+    }
     .number {
         flex-direction: column;
-        height: 100%;
-        margin-bottom: 20px;
+        height: auto; /* Adjust height */
+        gap: 1rem; /* Reduce spacing */
     }
 }
+
 
 .person-1 {
     background-color: black;
