@@ -38,7 +38,19 @@ img {
     .number {
         flex-direction: column;
         height: auto; /* Adjust height */
-        gap: 1rem; /* Reduce spacing */
+        gap: 2rem; /* Adjust spacing */
+    }
+    .person-2{
+        padding: 20px; /* Adjust padding */
+        margin-bottom: 2rem; /* Adjust margin */
+    }
+    .person-4 {
+        padding: 20px;
+        margin-bottom: 2rem;
+    }
+    .perosn-6 {
+        padding: 20px;
+        margin-bottom: 2rem;
     }
 }
 
