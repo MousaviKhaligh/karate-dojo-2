@@ -1,0 +1,178 @@
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    gap: 2rem;
+
+}
+
+
+.person {
+    flex: 1;
+    padding: 15px;
+    max-width: 300px;
+    background-color: yellow;
+    border-radius: 7px;
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.name {
+    margin-top: 10px;
+    color: white;
+}
+
+img {
+    height: 250px;
+    width: 250px;
+    border-radius: 3px;
+}
+
+
+@media (max-width: 700px) {
+    .number {
+        flex-direction: column;
+        min-height: 60vh;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.person-1 {
+    background-color: black;
+}
+.person-2 {
+    background-color: gray;
+}
+.person-3 {
+    background-color: blue;
+}
+.person-4 {
+    background-color: green;
+}
+.person-5 {
+    background-color: orange;
+}
+.person-6 {
+    background-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Ensure background is positioned correctly */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.glowing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: colorChange 5s linear infinite;
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.glowing span {
+    position: absolute;
+    top: calc(10vh * var(--i));
+    left: calc(10vw * var(--i));
+    bottom: calc(10vh * var(--i));
+    right: calc(10vw * var(--i));
+}
+
+.glowing span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 15px;
+    height: 15px;
+    background: #f00;
+    border-radius: 50%;
+}
+
+.glowing span:nth-child(3n + 1)::before {
+    background: rgba(134,255,0,1);
+    box-shadow: 0 0 20px rgba(134,255,0,1),
+                0 0 40px rgba(134,255,0,1),
+                0 0 60px rgba(134,255,0,1),
+                0 0 80px rgba(134,255,0,1),
+                0 0 0 8px rgba(134,255,0,.1);
+}
+
+.glowing span:nth-child(3n + 2)::before {
+    background: rgba(255,214,0,1);
+    box-shadow: 0 0 20px rgba(255,214,0,1),
+                0 0 40px rgba(255,214,0,1),
+                0 0 60px rgba(255,214,0,1),
+                0 0 80px rgba(255,214,0,1),
+                0 0 0 8px rgba(255,214,0,.1);
+}
+
+.glowing span:nth-child(3n + 3)::before {
+    background: rgba(0,226,255,1);
+    box-shadow: 0 0 20px rgba(0,226,255,1),
+                0 0 40px rgba(0,226,255,1),
+                0 0 60px rgba(0,226,255,1),
+                0 0 80px rgba(0,226,255,1),
+                0 0 0 8px rgba(0,226,255,.1);
+}
+
+@keyframes animate {
+    0% { transform: rotate(180deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes animate-reverse {
+    0% { transform: rotate(360deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.glowing span:nth-child(3n + 1) {
+    animation: animate 10s alternate infinite;
+}
+
+.glowing span:nth-child(3n + 2) {
+    animation: animate-reverse 3s alternate infinite;
+}
+
+.glowing span:nth-child(3n + 3) {
+    animation: animate 8s alternate infinite;
+}
